@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "IDLTestObject.h"
+#import "NSObject+Model.h"
+#import "IDLUser.h"
 
 void addedMethodIMP(id object,SEL select) {
     NSLog(@"run addedMethodIMP");
@@ -146,6 +148,17 @@ int main(int argc, const char * argv[]) {
         NSLog(@"CGFloat  : %s, %lu", @encode(CGFloat), sizeof(CGFloat));
         NSLog(@"int32_t  : %s, %lu", @encode(int32_t), sizeof(int32_t));
         NSLog(@"int64_t  : %s, %lu", @encode(int64_t), sizeof(int64_t));
+    
+        
+        IDLUser *user = [IDLUser idl_modelWithDic:@{
+            @"userName":@"jimmy",
+            @"userAge":@(29),
+            @"localAddress":@"广东广州",
+            @"country":@"CN",
+            @"topics":@[
+                            @{@"topicName":@"test",@"topicRankStar":@(100)},
+                            @{@"topicName":@"test1",@"topicRankStar":@(102)}
+                      ]}];
 
     }
     return 0;
