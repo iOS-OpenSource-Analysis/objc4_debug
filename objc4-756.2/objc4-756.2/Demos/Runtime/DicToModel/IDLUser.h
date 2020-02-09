@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IDLTopic : NSObject
+@interface IDLTopic : NSObject<NSCoding>
 
 @property(nonatomic, strong) NSString *topicName;
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface IDLUser : NSObject
+@interface IDLUser : NSObject<NSCoding>
 
 @property(nonatomic, strong) NSString *userName;
 

@@ -159,7 +159,11 @@ int main(int argc, const char * argv[]) {
                             @{@"topicName":@"test",@"topicRankStar":@(100)},
                             @{@"topicName":@"test1",@"topicRankStar":@(102)}
                       ]}];
-
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:user];
+        id userObject = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSLog(@"IDLUser = %@",user);
+        
     }
     return 0;
 }

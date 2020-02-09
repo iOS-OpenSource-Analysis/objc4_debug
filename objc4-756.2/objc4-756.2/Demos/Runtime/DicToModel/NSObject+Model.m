@@ -11,7 +11,6 @@
 
 #import <objc/runtime.h>
 
-
 @implementation NSObject (Model)
 
 + (instancetype)idl_modelWithDic:(NSDictionary *)dictionary {

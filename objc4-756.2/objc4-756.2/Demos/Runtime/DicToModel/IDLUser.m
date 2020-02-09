@@ -6,8 +6,14 @@
 //
 
 #import "IDLUser.h"
+#import <objc/runtime.h>
+#import "CommonHeader.h"
 
 @implementation IDLTopic
+
+INIT_WITH_CODER
+
+ENCODE_WITH_CODER
 
 @end
 
@@ -16,5 +22,9 @@
 + (NSDictionary *)arrayElementModelTypeMap {
     return @{@"topics":[IDLTopic class]};
 }
+
+INIT_WITH_CODER
+
+ENCODE_WITH_CODER
 
 @end

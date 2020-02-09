@@ -123,6 +123,9 @@
 		DA410BE323EEA54A00CB4C25 /* IDLTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BE223EEA54A00CB4C25 /* IDLTestObject.m */; };
 		DA410BE823EFCAB600CB4C25 /* IDLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BE723EFCAB600CB4C25 /* IDLUser.m */; };
 		DA410BEB23EFCB4F00CB4C25 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BEA23EFCB4F00CB4C25 /* NSObject+Model.m */; };
+		DA410BF723F0215F00CB4C25 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BF123F0215F00CB4C25 /* NSObject+Model.m */; };
+		DA410BF823F0215F00CB4C25 /* IDLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BF223F0215F00CB4C25 /* IDLUser.m */; };
+		DA410BF923F0215F00CB4C25 /* IDLTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BF523F0215F00CB4C25 /* IDLTestObject.m */; };
 		E8923DA5116AB2820071B552 /* objc-block-trampolines.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */; };
 		F9BCC71B205C68E800DD9AFC /* objc-blocktramps-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 8379996D13CBAF6F007C2B5F /* objc-blocktramps-arm64.s */; };
 /* End PBXBuildFile section */
@@ -257,6 +260,14 @@
 		DA410BE723EFCAB600CB4C25 /* IDLUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLUser.m; sourceTree = "<group>"; };
 		DA410BE923EFCB4F00CB4C25 /* NSObject+Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
 		DA410BEA23EFCB4F00CB4C25 /* NSObject+Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
+		DA410BEC23F01FEC00CB4C25 /* CommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
+		DA410BEF23F0215F00CB4C25 /* NSObject+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
+		DA410BF023F0215F00CB4C25 /* IDLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDLUser.h; sourceTree = "<group>"; };
+		DA410BF123F0215F00CB4C25 /* NSObject+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
+		DA410BF223F0215F00CB4C25 /* IDLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDLUser.m; sourceTree = "<group>"; };
+		DA410BF423F0215F00CB4C25 /* IDLTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDLTestObject.h; sourceTree = "<group>"; };
+		DA410BF523F0215F00CB4C25 /* IDLTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDLTestObject.m; sourceTree = "<group>"; };
+		DA410BF623F0215F00CB4C25 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
 		E8923D9C116AB2820071B552 /* objc-blocktramps-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-blocktramps-i386.s"; path = "runtime/objc-blocktramps-i386.s"; sourceTree = "<group>"; };
 		E8923D9D116AB2820071B552 /* objc-blocktramps-x86_64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-blocktramps-x86_64.s"; path = "runtime/objc-blocktramps-x86_64.s"; sourceTree = "<group>"; };
 		E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-block-trampolines.mm"; path = "runtime/objc-block-trampolines.mm"; sourceTree = "<group>"; };
@@ -488,6 +499,36 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		DA410BED23F0215F00CB4C25 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				DA410BEE23F0215F00CB4C25 /* DicToModel */,
+				DA410BF323F0215F00CB4C25 /* Base */,
+				DA410BF623F0215F00CB4C25 /* CommonHeader.h */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
+		DA410BEE23F0215F00CB4C25 /* DicToModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA410BEF23F0215F00CB4C25 /* NSObject+Model.h */,
+				DA410BF023F0215F00CB4C25 /* IDLUser.h */,
+				DA410BF123F0215F00CB4C25 /* NSObject+Model.m */,
+				DA410BF223F0215F00CB4C25 /* IDLUser.m */,
+			);
+			path = DicToModel;
+			sourceTree = "<group>";
+		};
+		DA410BF323F0215F00CB4C25 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA410BF423F0215F00CB4C25 /* IDLTestObject.h */,
+				DA410BF523F0215F00CB4C25 /* IDLTestObject.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		DA8403B623EE70B100E11D9C /* Demos */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +542,8 @@
 			children = (
 				DA410BE523EFCA9400CB4C25 /* Base */,
 				DA410BE423EFCA7F00CB4C25 /* DicToModel */,
+				DA410BEC23F01FEC00CB4C25 /* CommonHeader.h */,
+				DA410BED23F0215F00CB4C25 /* Runtime */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -731,10 +774,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA410BF923F0215F00CB4C25 /* IDLTestObject.m in Sources */,
 				DA410BE323EEA54A00CB4C25 /* IDLTestObject.m in Sources */,
 				DA410BE823EFCAB600CB4C25 /* IDLUser.m in Sources */,
 				6F8ADBF52314D1F300E235A9 /* main.m in Sources */,
 				DA410BEB23EFCB4F00CB4C25 /* NSObject+Model.m in Sources */,
+				DA410BF823F0215F00CB4C25 /* IDLUser.m in Sources */,
+				DA410BF723F0215F00CB4C25 /* NSObject+Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
