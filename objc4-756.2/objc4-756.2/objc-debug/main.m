@@ -11,6 +11,9 @@
 #import "NSObject+Model.h"
 #import "IDLUser.h"
 
+#import "IDLBaseKVCObject.h"
+#import "IDLProduct.h"
+
 void addedMethodIMP(id object,SEL select) {
     NSLog(@"run addedMethodIMP");
 }
@@ -163,6 +166,83 @@ int main(int argc, const char * argv[]) {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:user];
         id userObject = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         NSLog(@"IDLUser = %@",user);
+        
+        
+        //KVC 基本用法
+        IDLBaseKVCObject *kvcObject = [IDLBaseKVCObject new];
+        [kvcObject setValue:@"readOnlyValue" forKey:@"readOnlyValue"];
+        [kvcObject setValue:@"privateValue" forKey:@"privateValue"];
+        [kvcObject setValue:@"valueUnderLine" forKey:@"valueUnderLine"];
+        [kvcObject setValue:@"isValue" forKey:@"isValue"];
+        [kvcObject setValue:@"isValueUnderLine" forKey:@"isValueUnderLine"];
+        
+        //validateValue 用法
+        NSError *error = nil;
+        NSNumber *intValue = @4;
+        BOOL result = [kvcObject validateValue:&intValue forKey:@"valueLargeThan10" error:&error];
+        
+        //字典转模型/模型转字典
+        NSDictionary *dict = [kvcObject dictionaryWithValuesForKeys:@[@"readOnlyValue",@"privateValue",@"valueUnderLine",@"isValue",@"isValueUnderLine"]];
+        IDLBaseKVCObject *value = [IDLBaseKVCObject new];
+        [value setValuesForKeysWithDictionary:dict];
+        [value setValue:@"NULL" forKey:@"undefined"];
+
+        
+        NSLog(@"==>%@",dict);
+        
+        //集合操作
+        IDLProduct *product1 = [IDLProduct new];
+        product1.name = @"Product1";
+        product1.price = 11;
+        
+        IDLProduct *product2 = [IDLProduct new];
+        product2.name = @"Product2";
+        product2.price = 12;
+        
+        IDLProduct *product3 = [IDLProduct new];
+        product3.name = @"Product3";
+        product3.price = 13;
+        
+        IDLProduct *product4 = [IDLProduct new];
+        product4.name = @"Product4";
+        product4.price = 14;
+        
+        IDLProduct *product5= [IDLProduct new];
+        product5.name = @"Product5";
+        product5.price = 15;
+        
+        NSArray<IDLProduct *> *products = @[product1,product2,product3,product4,product5];
+        
+        //基本集合操作
+        NSInteger counts = [[products valueForKeyPath:@"@count"] integerValue];
+        NSInteger sums = [[products valueForKeyPath:@"@sum.price"] integerValue];
+        CGFloat avg = [[products valueForKeyPath:@"@avg.price"] floatValue];
+        NSInteger max = [[products valueForKeyPath:@"@max.price"] integerValue];
+        NSInteger min = [[products valueForKeyPath:@"@min.price"] integerValue];
+        
+        //对象集合操作
+        NSArray *priceArray = [products valueForKeyPath:@"@unionOfObjects.price"];
+        NSArray *nameArray = [products valueForKeyPath:@"@unionOfObjects.name"];
+        NSInteger sumValue = [[priceArray valueForKeyPath:@"@sum.self"] integerValue];
+        
+        //全部调用某个方法
+        nameArray = [nameArray valueForKeyPath:@"lowercaseString"];
+        
+        //数组集合操作
+        NSArray *productArray = @[products,products,products,products];
+        priceArray = [productArray valueForKeyPath:@"@unionOfArrays.price"];
+        
+        //其他用法
+        NSArray *array = @[
+                            @{@"name" : @"iPod",   @"price" : @99 },
+                            @{@"name" : @"iPhone", @"price" : @199},
+                            @{@"name" : @"iPhone", @"price" : @299},
+                            @{@"name" : @"iPhone", @"price" : @299},
+                        ];
+        
+        NSArray *collection = [array valueForKeyPath:@"name"];
+        
+        NSLog(@"");
         
     }
     return 0;
