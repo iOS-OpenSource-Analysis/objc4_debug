@@ -13,6 +13,7 @@
 
 #import "IDLBaseKVCObject.h"
 #import "IDLProduct.h"
+#import "IDLKVOObject.h"
 
 void addedMethodIMP(id object,SEL select) {
     NSLog(@"run addedMethodIMP");
@@ -176,6 +177,7 @@ int main(int argc, const char * argv[]) {
         [kvcObject setValue:@"isValue" forKey:@"isValue"];
         [kvcObject setValue:@"isValueUnderLine" forKey:@"isValueUnderLine"];
         
+        
         //validateValue 用法
         NSError *error = nil;
         NSNumber *intValue = @4;
@@ -242,8 +244,14 @@ int main(int argc, const char * argv[]) {
         
         NSArray *collection = [array valueForKeyPath:@"name"];
         
+        
         NSLog(@"");
         
+        IDLKVOObject *kvoObject = [IDLKVOObject new];
+        kvoObject.objects.propertyForKVO = @"propertyForKVO";
+        [kvoObject.objects setValue:@"firstName" forKey:@"firstName"];
+        //[kvoObject.objects setValue:@"lin.xiaohai" forKey:@"firstName"];
+        [kvoObject triggerInnerValue];
     }
     return 0;
 }

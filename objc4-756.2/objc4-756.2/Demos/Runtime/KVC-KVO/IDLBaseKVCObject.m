@@ -49,4 +49,20 @@
     return YES;
 }
 
++ (NSSet<NSString *> *)keyPathsForValuesAffectingFullName {
+    return [NSSet setWithObjects:@"firstName",@"secondName", nil];
+}
+
+- (void)triggerInnerValue {
+    [super willChangeValueForKey:@"triggerByInner"];
+    //由于这里的_triggerByInner不是通过setter方法y以及keyPath方法设置的所以不会自动触发KVO，所以需要这里手动触发
+    _triggerByInner = @"set Inner Value";
+    [super didChangeValueForKey:@"triggerByInner"];
+}
+
+//根据key来决定是否自动触发KVO
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    return YES;
+}
+
 @end

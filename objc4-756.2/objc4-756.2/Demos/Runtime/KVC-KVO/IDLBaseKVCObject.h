@@ -13,6 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong, readonly) NSString *readOnlyValue;
 
+@property(nonatomic, strong, readwrite) NSString *propertyForKVO;
+
+@property(nonatomic, strong, readwrite) NSString *fullName;
+@property(nonatomic, strong, readwrite) NSString *firstName;
+@property(nonatomic, strong, readwrite) NSString *secondName;
+
+@property(nonatomic, strong, readwrite) NSString *triggerByInner;
+
+- (void)triggerInnerValue;
+
 
 @end
 

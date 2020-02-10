@@ -128,6 +128,7 @@
 		DA410BF923F0215F00CB4C25 /* IDLTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410BF523F0215F00CB4C25 /* IDLTestObject.m */; };
 		DA410C0623F17E5000CB4C25 /* IDLBaseKVCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410C0523F17E5000CB4C25 /* IDLBaseKVCObject.m */; };
 		DA410C0923F187CB00CB4C25 /* IDLProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410C0823F187CB00CB4C25 /* IDLProduct.m */; };
+		DA410C0C23F18F9300CB4C25 /* IDLKVOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA410C0B23F18F9300CB4C25 /* IDLKVOObject.m */; };
 		E8923DA5116AB2820071B552 /* objc-block-trampolines.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */; };
 		F9BCC71B205C68E800DD9AFC /* objc-blocktramps-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 8379996D13CBAF6F007C2B5F /* objc-blocktramps-arm64.s */; };
 /* End PBXBuildFile section */
@@ -274,6 +275,8 @@
 		DA410C0523F17E5000CB4C25 /* IDLBaseKVCObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLBaseKVCObject.m; sourceTree = "<group>"; };
 		DA410C0723F187CB00CB4C25 /* IDLProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDLProduct.h; sourceTree = "<group>"; };
 		DA410C0823F187CB00CB4C25 /* IDLProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLProduct.m; sourceTree = "<group>"; };
+		DA410C0A23F18F9300CB4C25 /* IDLKVOObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDLKVOObject.h; sourceTree = "<group>"; };
+		DA410C0B23F18F9300CB4C25 /* IDLKVOObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLKVOObject.m; sourceTree = "<group>"; };
 		E8923D9C116AB2820071B552 /* objc-blocktramps-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-blocktramps-i386.s"; path = "runtime/objc-blocktramps-i386.s"; sourceTree = "<group>"; };
 		E8923D9D116AB2820071B552 /* objc-blocktramps-x86_64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-blocktramps-x86_64.s"; path = "runtime/objc-blocktramps-x86_64.s"; sourceTree = "<group>"; };
 		E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-block-trampolines.mm"; path = "runtime/objc-block-trampolines.mm"; sourceTree = "<group>"; };
@@ -542,6 +545,8 @@
 				DA410C0523F17E5000CB4C25 /* IDLBaseKVCObject.m */,
 				DA410C0723F187CB00CB4C25 /* IDLProduct.h */,
 				DA410C0823F187CB00CB4C25 /* IDLProduct.m */,
+				DA410C0A23F18F9300CB4C25 /* IDLKVOObject.h */,
+				DA410C0B23F18F9300CB4C25 /* IDLKVOObject.m */,
 			);
 			path = "KVC-KVO";
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 				DA410C0923F187CB00CB4C25 /* IDLProduct.m in Sources */,
 				DA410C0623F17E5000CB4C25 /* IDLBaseKVCObject.m in Sources */,
 				DA410BEB23EFCB4F00CB4C25 /* NSObject+Model.m in Sources */,
+				DA410C0C23F18F9300CB4C25 /* IDLKVOObject.m in Sources */,
 				DA410BF823F0215F00CB4C25 /* IDLUser.m in Sources */,
 				DA410BF723F0215F00CB4C25 /* NSObject+Model.m in Sources */,
 			);
